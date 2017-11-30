@@ -1,0 +1,17 @@
+
+<h5> Recent Questions: </h5>
+<%@questions.each do |question|%>
+<ul>
+  <li>
+    <%= link_to question.title, question_path(question.id) %>
+  </li>
+</ul>
+<%end%>
+
+<div class="footer">
+  <% if current_user == nil %>
+    Please sign in to ask a question
+  <% else %>
+    <%= link_to "Ask Something New", new_question_path %>
+  <%end%>
+</div>

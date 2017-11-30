@@ -5,3 +5,37 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+
+# first_name = Faker::Name.first_name
+# last_name = Faker::Name.last_name
+# person = Person.create(
+#   :first_name => first_name
+#   :last_name => last_name
+#   :email => Faker::Internet.email(first_name + "." + last_name)
+# )
+
+#
+# User.destroy_all
+# Question.destroy_all
+
+
+# 5.times do
+#   User.create(
+#     provider: "Github",
+#     uid: Rand.
+#     email: Faker::Internet.email,
+#     username: Faker::Seinfeld.character,
+#     avatar_url: Faker::Avatar.image
+#   )
+# end
+
+
+
+20.times do
+  Question.create(
+    title: Faker::MostInterestingManInTheWorld.quote,
+    body: Faker::Seinfeld.quote,
+    user_id: 1
+  )
+end

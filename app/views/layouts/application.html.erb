@@ -6,9 +6,23 @@
 
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.4.3/css/foundation-float.css">
   </head>
 
-  <body>
+  <body class="page">
+    <div class="top-page">
+      <h1>SlackOverview 2.0<h1>
+      <% if current_user.blank? %>
+        <h6>Please Sign In</h6>
+        <%= link_to 'Sign In with Github', '/auth/github' %>
+        <% else %>
+        <h6>
+          You are signed in as <%= current_user.username %>.  Click the button below to sign out.
+        </h6>
+
+        <%= button_to "Sign Out", signout_path, method: :delete %>
+          <% end %>
+    </div>
     <%= yield %>
   </body>
 </html>
